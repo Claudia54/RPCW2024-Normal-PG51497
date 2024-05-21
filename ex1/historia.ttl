@@ -1,0 +1,234 @@
+@prefix : <http://rpcw.di.uminho.pt/2024/untitled-ontology-54/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://rpcw.di.uminho.pt/2024/untitled-ontology-54/> .
+
+<http://rpcw.di.uminho.pt/2024/untitled-ontology-54> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#ajuda
+:ajuda rdf:type owl:ObjectProperty ;
+       rdfs:domain :filho ;
+       rdfs:range :Pessoa .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#ajudaColheita
+:ajudaColheita rdf:type owl:ObjectProperty ;
+               rdfs:domain :esposa ;
+               rdfs:range :agricultor .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#contrata
+:contrata rdf:type owl:ObjectProperty ;
+          rdfs:domain :agricultor ;
+          rdfs:range :trabalhadorTemporario .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#cria
+:cria rdf:type owl:ObjectProperty ;
+      rdfs:domain :agricultor ;
+      rdfs:range :animais .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#cultiva
+:cultiva rdf:type owl:ObjectProperty ;
+         rdfs:domain :agricultor ;
+         rdfs:range :fruta .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#fazProduto
+:fazProduto rdf:type owl:ObjectProperty ;
+            rdfs:domain :esposa ;
+            rdfs:range :produto .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#possuiFazenda
+:possuiFazenda rdf:type owl:ObjectProperty ;
+               rdfs:domain :agricultor ;
+               rdfs:range :fazenda .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#protege
+:protege rdf:type owl:ObjectProperty ;
+         rdfs:domain :cachorro ;
+         rdfs:range :fazenda .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#troca
+:troca rdf:type owl:ObjectProperty ;
+       rdfs:domain :agricultor ;
+       rdfs:range :vizinho .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#usa
+:usa rdf:type owl:ObjectProperty ;
+     rdfs:domain :agricultor ;
+     rdfs:range :trator .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#vende
+:vende rdf:type owl:ObjectProperty ;
+       rdfs:domain :agricultor ;
+       rdfs:range :feira .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#DinheiroHora
+:DinheiroHora rdf:type owl:DatatypeProperty .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#Nome
+:Nome rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Pessoa .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#nomeAnimal
+:nomeAnimal rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :cachorro .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#nomeProduto
+:nomeProduto rdf:type owl:DatatypeProperty ;
+             rdfs:domain :produto .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#receberefeiçao
+:receberefeiçao rdf:type owl:DatatypeProperty ;
+                rdfs:domain :trabalhadorTemporario .
+
+
+###  http://www.w3.org/2002/07/owl#topDataProperty
+owl:topDataProperty rdf:type owl:FunctionalProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#Pessoa
+:Pessoa rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#agricultor
+:agricultor rdf:type owl:Class ;
+            rdfs:subClassOf :Pessoa .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#alface
+:alface rdf:type owl:Class ;
+        rdfs:subClassOf :vegetal .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#animais
+:animais rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#banana
+:banana rdf:type owl:Class ;
+        rdfs:subClassOf :fruta .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#cachorro
+:cachorro rdf:type owl:Class ;
+          rdfs:subClassOf :animais .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#cenoura
+:cenoura rdf:type owl:Class ;
+         rdfs:subClassOf :vegetal .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#esposa
+:esposa rdf:type owl:Class ;
+        rdfs:subClassOf :Pessoa .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#fazenda
+:fazenda rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#feira
+:feira rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#filho
+:filho rdf:type owl:Class ;
+       rdfs:subClassOf :Pessoa .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#fruta
+:fruta rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#galinha
+:galinha rdf:type owl:Class ;
+         rdfs:subClassOf :animais .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#geleia
+:geleia rdf:type owl:Class ;
+        rdfs:subClassOf :produto .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#laranja
+:laranja rdf:type owl:Class ;
+         rdfs:subClassOf :fruta .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#maca
+:maca rdf:type owl:Class ;
+      rdfs:subClassOf :fruta .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#porco
+:porco rdf:type owl:Class ;
+       rdfs:subClassOf :animais .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#produto
+:produto rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#tomate
+:tomate rdf:type owl:Class ;
+        rdfs:subClassOf :vegetal .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#trabalhadorTemporario
+:trabalhadorTemporario rdf:type owl:Class ;
+                       rdfs:subClassOf :Pessoa .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#trator
+:trator rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#vaca
+:vaca rdf:type owl:Class ;
+      rdfs:subClassOf :animais .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#vegetal
+:vegetal rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#vila
+:vila rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-54#vizinho
+:vizinho rdf:type owl:Class ;
+         rdfs:subClassOf :Pessoa .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
