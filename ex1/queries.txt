@@ -1,0 +1,47 @@
+QUESTAO 1 
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-54/>
+
+SELECT (COUNT(?class) AS ?num_classes)
+WHERE {
+  ?class rdf:type owl:Class .
+}
+
+QUESTAO 2 
+
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-54/>
+
+SELECT (COUNT(?property) AS ?num_object_properties)
+WHERE {
+  ?property rdf:type owl:ObjectProperty .
+}
+
+
+QUESTÃO 3 
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-54/>
+
+SELECT (COUNT(?individual) AS ?num_individuals)
+WHERE {
+  ?individual rdf:type ?class .
+  FILTER(?class != owl:Class && ?class != owl:ObjectProperty && ?class != owl:DatatypeProperty)
+}
+
+
+QUESTÃO 4 
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-54/>
+
+SELECT ?farmer
+WHERE {
+  ?farmer :cultiva :tomate .
+}
+
+QUESTÃO 5 
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-54/>
+
+SELECT ?farmer
+WHERE {
+  ?farmer :contrata :trabalhadorTemporario .
+}
+
